@@ -63,7 +63,7 @@ const TransactionComponent = (props) =>{
         
     };
     
-    useEffect(() => filterData(searchText), [props.transactions]);  // eslint-disable-line react-hooks/exhaustive-deps
+    useEffect(() => filterData(searchText), [props.transactions]); // eslint-disable-line react-hooks/exhaustive-deps
     
 
     return(

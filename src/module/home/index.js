@@ -28,9 +28,14 @@ const HomeComponent = (props) =>{
     const calculateBalance = () =>{
         let exp = 0;
         let inc = 0;
-            transactions.map((payload)=>{
-            payload.type==="EXPENSE"? exp=exp+payload.amount: inc=inc+payload.amount;
-        })
+            transactions.map((payload)=> 
+            {
+                return payload.type==="EXPENSE"? exp=exp+payload.amount: inc=inc+payload.amount;
+            }
+            
+           
+            
+        )
         updateExpense(exp);
         updateIncome(inc);
     }
