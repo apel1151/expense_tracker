@@ -80,10 +80,11 @@ const AddTransactionView = (props) =>{
 
     return(
        <AddTransactionContainer>
-                    <input type="text" 
+                    <input 
                         placeholder="Amount" 
                         value={amount} 
-                        type="number" 
+                        // eslint-disable-next-line react/jsx-no-duplicate-props
+                        type ="number" 
                         onChange={(e)=>setAmount(e.target.value)}
                     />
                     <input type="text" 

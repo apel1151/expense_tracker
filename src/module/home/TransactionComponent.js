@@ -47,6 +47,7 @@ const TransactionCell = (props) =>{
 }
 
 const TransactionComponent = (props) =>{
+    
     const [searchText, updateSearchText] = useState("");
     const [filteredTxn, updateTxn] = useState(props.transactions);
     const filterData = (searchText) =>{
@@ -56,13 +57,14 @@ const TransactionComponent = (props) =>{
         }
         let txn = [...props.transactions];
         txn = txn.filter((payload) =>
-         payload.amount.toString().includes(searchText.trim())
+         payload.desc.toLowerCase().includes(searchText.toLowerCase().trim())
         )
         updateTxn(txn);
         
     };
     
-    useEffect(() => filterData(searchText), [props.transactions]);
+    useEffect(() => filterData(searchText), [props.transactions]);  // eslint-disable-line react-hooks/exhaustive-deps
+    
 
     return(
         <Container>Transaction History
